@@ -15,12 +15,14 @@ import * as AppData from "../../app.json";
 // screens
 import DashBoard from "../Screens/DashBoard";
 import QuestionPaper from "../Screens/QuestionPaper";
+import QBank from "../Screens/QBank";
 import About from "../Screens/About";
 
 import SyllabusDetailView from "../Screens/DetailsScreen/SyllabusDetailView";
 import LabDetailView from "../Screens/DetailsScreen/LabDetailView";
 import LabPartDetailView from "../Screens/DetailsScreen/LabPartDetailView";
 import QPDetailsScreen from "../Screens/QPDetailsScreen/QPDetailsScreen";
+import QBankDetails from "../Screens/QBankDetailsScreen/QBankDetails";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -125,6 +127,46 @@ function QuestionPaperRoot({ navigation }) {
   );
 }
 
+function QBankRoot({ navigation }) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="QBank"
+        component={QBank}
+        options={{
+          headerTintColor: "black",
+          headerTitleAlign: "center",
+          headerTitle: "Question Bank",
+
+          headerStyle: { backgroundColor: "#aed581" },
+
+          headerLeft: () => (
+            <Button transparent onPress={() => navigation.openDrawer()}>
+              <Feather
+                name="menu"
+                size={22}
+                color="black"
+                style={{ paddingHorizontal: 10 }}
+              />
+            </Button>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="QBankDetails"
+        component={QBankDetails}
+        options={{
+          headerTitle: "",
+          headerTintColor: "black",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontSize: 20 },
+          headerStyle: { backgroundColor: "#aed581" },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 const Screens = ({ navigation, style }) => {
   return (
     <Animated.View style={StyleSheet.flatten([styles.stack, style])}>
@@ -161,10 +203,13 @@ const Screens = ({ navigation, style }) => {
         >
           {(props) => <QuestionPaperRoot {...props} />}
         </Stack.Screen>
+        <Stack.Screen name="QBank" options={{ headerShown: false }}>
+          {(props) => <QBankRoot {...props} />}
+        </Stack.Screen>
         <Stack.Screen
           name="About"
-          headerTitle="About"
           options={{
+            headerTitle: "About",
             headerRight: () => (
               <Button
                 transparent
@@ -236,11 +281,11 @@ const DrawerContent = (props) => {
             icon={() => <FontAwesome name="dashcube" size={24} color="black" />}
           />
           <DrawerItem
-            label="Question Papers"
+            label="Question Bank"
             labelStyle={styles.drawerLabel}
             style={styles.drawerItem}
-            onPress={() => props.navigation.navigate("QuestionPaper")}
-            icon={() => <AntDesign name="filetext1" color="black" size={24} />}
+            onPress={() => props.navigation.navigate("QBank")}
+            icon={() => <AntDesign name="hdd" size={24} color="black" />}
           />
         </Block>
       </Block>

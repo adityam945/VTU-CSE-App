@@ -50,9 +50,9 @@ export default function LabDetailView({ route, navigation }) {
 
   useEffect(() => {
     fetch(
-      `https://vtu17cse-lab-adityam945.netlify.app/.netlify/functions/api/${encodeURIComponent(
+      `https://adityam945.github.io/cse-labsylabus/${encodeURIComponent(
         labScreenType
-      )}`
+      )}.json`
     )
       .then((response) => response.json())
       .then((json) => setData(json))

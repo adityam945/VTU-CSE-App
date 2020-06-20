@@ -35,7 +35,7 @@ const data17cs = [
     laboratory: "2",
     syllabusDesc: "View Subjects Syllabus",
     screenname: "SyllabusDetailView",
-    screenType: "sem3Syllabus17",
+    screenType: "sem3syllabus17",
     labDesc: "View Laboratory Syllabus",
     labscreenname: "LabDetailView",
     labScreenType: "sem3Lab17",
@@ -48,7 +48,7 @@ const data17cs = [
     laboratory: "2",
     syllabusDesc: "View Subjects Syllabus",
     screenname: "SyllabusDetailView",
-    screenType: "sem4Syllabus17",
+    screenType: "sem4syllabus17",
     labDesc: "View Laboratory Syllabus",
     labscreenname: "LabPartDetailView",
     labScreenType: "sem4Lab17",
@@ -120,7 +120,7 @@ const DashBoard = ({ navigation }) => {
   });
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#ffe082" }}>
+    <View style={{ flex: 1, backgroundColor: "#ffca28" }}>
       <ScrollView
         onScroll={Animated.event([
           { nativeEvent: { contentOffset: { y: scrollOffsetY } } },
@@ -150,7 +150,7 @@ const DashBoard = ({ navigation }) => {
               }}
             >
               <View
-                style={{ flex: 1, padding: 24, backgroundColor: "#ffcc80" }}
+                style={{ flex: 1, padding: 24, backgroundColor: "#ffca28" }}
               >
                 <Text
                   style={{
@@ -162,16 +162,16 @@ const DashBoard = ({ navigation }) => {
                   Syllabus 17 Scheme
                 </Text>
                 <FlatList
-                  data={data17cs} 
+                  data={data17cs}
                   keyExtractor={({ id }, index) => id}
                   renderItem={({ item }) => (
-                    <View style={{ backgroundColor: "#ffcc80" }}>
+                    <View style={{ backgroundColor: "#ffca28" }}>
                       <Content padder>
                         <Card>
                           <CardItem
                             header
                             bordered
-                            style={{ backgroundColor: "#bdbdbd" }}
+                            style={{ backgroundColor: "#cddc39" }}
                           >
                             <Text style={styles.cardHeader}>{item.semno}</Text>
                           </CardItem>
@@ -185,6 +185,7 @@ const DashBoard = ({ navigation }) => {
                                 screenType: item.screenType,
                               })
                             }
+                            style={{ backgroundColor: "#e6ee9c" }}
                           >
                             <Text style={styles.textFont18}>
                               {item.syllabusDesc}
@@ -203,6 +204,7 @@ const DashBoard = ({ navigation }) => {
                                 labScreenType: item.labScreenType,
                               })
                             }
+                            style={{ backgroundColor: "#e6ee9c" }}
                           >
                             <Text style={styles.textFont18}>
                               {item.labDesc}

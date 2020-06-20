@@ -60,9 +60,9 @@ export default function DetailsScreen({ route, navigation }) {
 
   useEffect(() => {
     fetch(
-      `https://vtu17cse-syllabus-adityam945.netlify.app/.netlify/functions/api/${encodeURIComponent(
+      `https://adityam945.github.io/cse-syllabus/${encodeURIComponent(
         screenType
-      )}`
+      )}.json`
     )
       .then((response) => response.json())
       .then((json) => setData(json))

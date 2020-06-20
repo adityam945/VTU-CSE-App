@@ -46,13 +46,13 @@ export default function LabPartDetailView({ route, navigation }) {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const { labScreenType } = route.params;
-  const [modalVisible, setModalVisible] = useState(false); 
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     fetch(
-      `https://vtu17cse-lab-adityam945.netlify.app/.netlify/functions/api/${encodeURIComponent(
+      `https://adityam945.github.io/cse-labsylabus/${encodeURIComponent(
         labScreenType
-      )}`
+      )}.json`
     )
       .then((response) => response.json())
       .then((json) => setData(json))
