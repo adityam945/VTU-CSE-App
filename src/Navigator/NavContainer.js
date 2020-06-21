@@ -7,7 +7,12 @@ import {
   DrawerContentScrollView,
 } from "@react-navigation/drawer";
 import Animated from "react-native-reanimated";
-import { Feather, AntDesign, FontAwesome } from "@expo/vector-icons";
+import {
+  Feather,
+  AntDesign,
+  FontAwesome,
+  Foundation,
+} from "@expo/vector-icons";
 import { Block, Button, Text } from "expo-ui-kit";
 import { LinearGradient } from "expo-linear-gradient";
 import * as AppData from "../../app.json";
@@ -16,6 +21,7 @@ import * as AppData from "../../app.json";
 import DashBoard from "../Screens/DashBoard";
 import QuestionPaper from "../Screens/QuestionPaper";
 import QBank from "../Screens/QBank";
+import Notes from "../Screens/Notes";
 import About from "../Screens/About";
 
 import SyllabusDetailView from "../Screens/DetailsScreen/SyllabusDetailView";
@@ -23,6 +29,7 @@ import LabDetailView from "../Screens/DetailsScreen/LabDetailView";
 import LabPartDetailView from "../Screens/DetailsScreen/LabPartDetailView";
 import QPDetailsScreen from "../Screens/QPDetailsScreen/QPDetailsScreen";
 import QBankDetails from "../Screens/QBankDetailsScreen/QBankDetails";
+import NotesDetailsScreen from "../Screens/NotesDetailsScreen/NotesDetailsScreen";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -167,6 +174,46 @@ function QBankRoot({ navigation }) {
   );
 }
 
+function NotesRoot({ navigation }) {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Notes"
+        component={Notes}
+        options={{
+          headerTintColor: "black",
+          headerTitleAlign: "center",
+          headerTitle: "Question Bank",
+
+          headerStyle: { backgroundColor: "#aed581" },
+
+          headerLeft: () => (
+            <Button transparent onPress={() => navigation.openDrawer()}>
+              <Feather
+                name="menu"
+                size={22}
+                color="black"
+                style={{ paddingHorizontal: 10 }}
+              />
+            </Button>
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="NotesDetailsScreen"
+        component={NotesDetailsScreen}
+        options={{
+          headerTitle: "",
+          headerTintColor: "black",
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontSize: 20 },
+          headerStyle: { backgroundColor: "#aed581" },
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 const Screens = ({ navigation, style }) => {
   return (
     <Animated.View style={StyleSheet.flatten([styles.stack, style])}>
@@ -206,6 +253,9 @@ const Screens = ({ navigation, style }) => {
         <Stack.Screen name="QBank" options={{ headerShown: false }}>
           {(props) => <QBankRoot {...props} />}
         </Stack.Screen>
+        <Stack.Screen name="Notes" options={{ headerShown: false }}>
+          {(props) => <NotesRoot {...props} />}
+        </Stack.Screen>
         <Stack.Screen
           name="About"
           options={{
@@ -215,7 +265,7 @@ const Screens = ({ navigation, style }) => {
                 transparent
                 onPress={() =>
                   Alert.alert(
-                    "The MOCK created is free so mock data disappears after 24 Hours"
+                    "All the data is from backend API or JSON data from git page"
                   )
                 }
               >
@@ -286,6 +336,15 @@ const DrawerContent = (props) => {
             style={styles.drawerItem}
             onPress={() => props.navigation.navigate("QBank")}
             icon={() => <AntDesign name="hdd" size={24} color="black" />}
+          />
+          <DrawerItem
+            label="Notes"
+            labelStyle={styles.drawerLabel}
+            style={styles.drawerItem}
+            onPress={() => props.navigation.navigate("Notes")}
+            icon={() => (
+              <Foundation name="clipboard-notes" size={24} color="black" />
+            )}
           />
         </Block>
       </Block>

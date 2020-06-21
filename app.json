@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mainvtu",
-    "slug": "mainvtu",
+    "name": "CSE-VTU",
+    "slug": "cse-vtu",
     "platforms": [
       "ios",
       "android",
@@ -23,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Contains CSE syllabus,notes,etc of VTU"
   }
 }
