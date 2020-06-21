@@ -50,7 +50,7 @@ function DashBoardRoot({ navigation }) {
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={22}
+                size={26}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -111,7 +111,7 @@ function QuestionPaperRoot({ navigation }) {
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={22}
+                size={26}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -151,7 +151,7 @@ function QBankRoot({ navigation }) {
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={22}
+                size={26}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -191,7 +191,7 @@ function NotesRoot({ navigation }) {
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={22}
+                size={26}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -228,7 +228,7 @@ const Screens = ({ navigation, style }) => {
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={22}
+                size={26}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
