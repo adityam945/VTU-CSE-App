@@ -2,16 +2,24 @@
   "expo": {
     "name": "CSE-VTU",
     "slug": "cse-vtu",
+    "ios": {
+      "bundleIdentifier": "com.csevtu.csevtu",
+      "buildNumber": "1.0.1"
+    },
+    "android": {
+      "package": "com.csevtu.csevtu",
+      "versionCode": 2
+    },
     "platforms": [
       "ios",
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/sideLogo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/sideLogo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,9 +29,6 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
     "description": "Contains CSE syllabus,notes,etc of VTU"
   }
 }

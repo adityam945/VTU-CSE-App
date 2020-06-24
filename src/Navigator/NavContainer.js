@@ -43,14 +43,14 @@ function DashBoardRoot({ navigation }) {
         options={{
           headerTintColor: "black",
           headerTitleAlign: "center",
-
+          headerTitleStyle: { fontSize: 20 },
           headerStyle: { backgroundColor: "#aed581" },
 
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={26}
+                size={28}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -104,14 +104,14 @@ function QuestionPaperRoot({ navigation }) {
         options={{
           headerTintColor: "black",
           headerTitleAlign: "center",
-
+          headerTitleStyle: { fontSize: 20 },
           headerStyle: { backgroundColor: "#aed581" },
 
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={26}
+                size={28}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -144,14 +144,14 @@ function QBankRoot({ navigation }) {
           headerTintColor: "black",
           headerTitleAlign: "center",
           headerTitle: "Question Bank",
-
+          headerTitleStyle: { fontSize: 20 },
           headerStyle: { backgroundColor: "#aed581" },
 
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={26}
+                size={28}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -184,14 +184,14 @@ function NotesRoot({ navigation }) {
           headerTintColor: "black",
           headerTitleAlign: "center",
           headerTitle: "Question Bank",
-
+          headerTitleStyle: { fontSize: 20 },
           headerStyle: { backgroundColor: "#aed581" },
 
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={26}
+                size={28}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -221,14 +221,14 @@ const Screens = ({ navigation, style }) => {
         screenOptions={{
           headerTintColor: "black",
           headerTitleAlign: "center",
-
+          headerTitleStyle: { fontSize: 20 },
           headerStyle: { backgroundColor: "#aed581" },
 
           headerLeft: () => (
             <Button transparent onPress={() => navigation.openDrawer()}>
               <Feather
                 name="menu"
-                size={26}
+                size={28}
                 color="black"
                 style={{ paddingHorizontal: 10 }}
               />
@@ -260,6 +260,7 @@ const Screens = ({ navigation, style }) => {
           name="About"
           options={{
             headerTitle: "About",
+            headerTitleStyle: { fontSize: 20 },
             headerRight: () => (
               <Button
                 transparent
